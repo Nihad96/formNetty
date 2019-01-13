@@ -1,0 +1,10 @@
+# Activons le "RewriteEngine" pour pouvoir
+# utiliser les "RewriteRule" et "RewriteCond"
+RewriteEngine on
+RewriteBase /dev/ca3
+
+# Ensuite, vérifions que nous sommes bien sur
+# mathieupeloquin.com ou www.mathieupeloquin.com
+# et dans le sous-dossier voulu.
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) public/$1 [L]
